@@ -2,3 +2,9 @@ streamlit
 transformers
 pytorch
 pandas
+matplotlib
+seaborn
+re
+pymorphy2
+nltk
+wordcloud
