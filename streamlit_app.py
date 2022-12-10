@@ -191,3 +191,26 @@ if result:
     sentpie_and_chat(df)
     users_top(df)
     make_clouds(df)
+
+    with st.expander("Выбор интересущего периода, пользователя и тональности"):
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:    
+            date = st.date_input('Выберите дату для просмотра активности', 
+                                #value=datetime.date,
+                                #min_value=df.date[df.shape[0]],
+                                #max_value=df.date[0],
+                                help='По выбранной дате будет дополнительная статистика')
+
+        with col2:    
+            choice = st.selectbox(label='Выберите тональность', 
+                            options=('NEUTRAL', 'POSITIVE', 'NEGATIVE'),
+                            help='Выберите интересующую тональность для анализа соответствующих сообщений')
+
+        with col3:    
+            choice = st.selectbox(label='Выберите пользователя', 
+                            options=('1','2','3'),
+                            index=0,
+                            help='Выберите интересующего пользователя для анализа его сообщений')
+        
+        res = st.button('Проанализировать выбранные параметры', )
