@@ -185,6 +185,7 @@ choice = st.selectbox('Выберите чат для анализа', ("Chat1",
 result = st.button('Проанализировать чат', )
 
 if result:
+
     df = preprocessing_df(data_url)
     
     time_histplot(df)
